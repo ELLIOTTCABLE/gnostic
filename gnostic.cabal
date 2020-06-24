@@ -1,0 +1,63 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 0a08acca91a9a2c9de14fe2ff06d3c6b3e48bc9cac582f72d793ed8a84151645
+
+name:           gnostic
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/ELLIOTTCABLE/gnostic#readme>
+homepage:       https://github.com/ELLIOTTCABLE/gnostic#readme
+bug-reports:    https://github.com/ELLIOTTCABLE/gnostic/issues
+author:         ELLIOTTCABLE
+maintainer:     cabal@ell.io
+copyright:      2020 ELLIOTTCABLE
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/ELLIOTTCABLE/gnostic
+
+library
+  exposed-modules:
+      Lib
+      Throwaway
+  other-modules:
+      Paths_gnostic
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable gnostic-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_gnostic
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , gnostic
+  default-language: Haskell2010
+
+test-suite gnostic-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_gnostic
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , gnostic
+  default-language: Haskell2010

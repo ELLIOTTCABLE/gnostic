@@ -1,0 +1,98 @@
+name:                gnostic
+version:             0.1.0.0
+github:              "ELLIOTTCABLE/gnostic"
+license:             BSD3
+author:              "ELLIOTTCABLE"
+maintainer:          "cabal@ell.io"
+copyright:           "2020 ELLIOTTCABLE"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/ELLIOTTCABLE/gnostic#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+# default-extensions:
+  # Lifted from Lexi Lambda's tutorial:
+  #    <https://lexi-lambda.github.io/blog/2018/02/10/an-opinionated-guide-to-haskell-in-2018/#any-flavor-you-like>
+  # - EmptyCase
+  # - FlexibleContexts
+  # - FlexibleInstances
+  # - InstanceSigs
+  # - MultiParamTypeClasses
+  #
+  # - LambdaCase
+  # - MultiWayIf
+  # - NamedFieldPuns
+  # - TupleSections
+  #
+  # - DeriveFoldable
+  # - DeriveFunctor
+  # - DeriveGeneric
+  # - DeriveLift
+  # - DeriveTraversable
+  # - DerivingStrategies
+  # - GeneralizedNewtypeDeriving
+  # - StandaloneDeriving
+  #
+  # - BangPatterns
+  # - KindSignatures
+  # - TypeOperators
+  #
+  # # - OverloadedStrings
+  #
+  # - ScopedTypeVariables
+  # - TypeApplications
+  #
+  # - ConstraintKinds
+  # - RankNTypes
+  #
+  # - ApplicativeDo
+  # - DefaultSignatures
+  # - PatternSynonyms
+  #
+  # - ExistentialQuantification
+  # - FunctionalDependencies
+  # - GADTs
+  #
+  # - DataKinds
+  # - TypeFamilies
+  # - TypeFamilyDependencies
+  #
+  # - TemplateHaskell
+  # - QuasiQuotes
+
+executables:
+  gnostic-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - gnostic
+
+tests:
+  gnostic-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - gnostic
